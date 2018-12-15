@@ -22,11 +22,9 @@ function Get-BucketLifeCycle {
                 DateTimeExpire    = $bucketRule.Expiration.Date
                 DaysUntilArchieve = $bucketRule.Expiration.Days
                 NoncurrentExpire  = $bucketRule.NoncurrentVersionExpiration.NoncurrentDays
+                Transitions       = $bucketRule.Transitions.Transitions
                 StatusOfRule      = $bucketRule.Status.Value
             }
         }
     }
 }
-
-## Example
-Get-S3Bucket -BucketName demo-life-cycle | Get-BucketLifeCycle
